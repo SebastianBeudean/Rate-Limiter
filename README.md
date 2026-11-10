@@ -21,3 +21,5 @@ There are also cons to this approach:
 3. Thus, if the number of requests is very high, the algorithm might be too expensive to run and the tradeoff for accuracy not worth it.
 ### Difficulties faced in developing the Rate limiter
 I have not yet covered data structures extensively or multithreaded programming at all in my personal education or at university as a first year CS student. The implementation of the rate limiter algorithm was definitely not an issue, but the multithreaded programming aspect required the use of generative AI.
+### Additional comments
+I would prefer to see a request object be passed to the `allow()` method instead of only the parameter `key` - a request object that contains the fields `key` and `timestamp`. I included the parameter `timestamp` in the signature of the `allow()` method as I found the initialization of the timestamp of a request to not be conceptually within the scope of a Rate Limiter, but I probably should've asked about this and not included a parameter that was not in the problem statement for this method.
