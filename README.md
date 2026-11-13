@@ -17,7 +17,7 @@ From the 5 algorithms listed in the book, I chose the sliding window log algorit
 
 There are also cons to this approach:
 1. It is memory inefficient. It saves up to `limit` number of timestamps in the log, so the space complexity is dependent on the `limit` of requests.
-2. On average, it can be considered time inefficient when compared to other rate limiter algorithms. Iterating through the log to find and remove outdated timestamps on each call takes up more and more time as the `limit` of requests increases. The time complexity of the algorithm is linear and dependent on the `limit` of requests.
+2. On average, it can be considered time inefficient when compared to other rate limiter algorithms. Iterating through the log to find and remove outdated timestamps on each call takes up more and more time as the `limit` of requests increases. The time complexity of the algorithm is polynomial and dependent on the `limit` of requests.
 3. Thus, if the number of requests is very high, the algorithm might be too expensive to run and the tradeoff for accuracy not worth it.
 ### Difficulties faced in developing the Rate limiter
 I have not yet covered data structures extensively or multithreaded programming at all in my personal education or at university as a first year CS student. The implementation of the rate limiter algorithm was definitely easy and was thus done by hand, but the multithreaded programming aspect and testing required the use of generative AI.
